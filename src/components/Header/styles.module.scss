@@ -18,10 +18,10 @@
     align-items: center;
 
     img {
-        max-width: 300px;
+        max-width: 150px;
         max-height: 70px;
         transform: rotate(45deg);
-        fill: var(--blue-900);
+        
     }
     
 
@@ -98,11 +98,9 @@
             }
         }
 
-
-
         img {
-            max-width: 100px;
-            max-height: 24px;
+            max-width: 150px;
+            max-height: 40px;
         }
     }
 }

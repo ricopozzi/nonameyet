@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './styles.module.scss'
+import styles from './home.module.scss'
 import { CgWebsite } from 'react-icons/cg'
 import { GrTechnology } from 'react-icons/gr'
 import { FaRegHandshake } from 'react-icons/fa'
+import Footer from '../components/Footer/index'
+
+import ContactForm from '../components/ContactForm/index'
 
 export default function Home() {
   return (
@@ -59,8 +62,11 @@ export default function Home() {
           </div>
        </div>
        </div>
-      
      </section>
+     <section className={styles.formSection}>
+       <ContactForm />
+     </section>
+     <Footer />
      
     </>  
    )

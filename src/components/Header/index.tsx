@@ -6,7 +6,7 @@ export default function Header() {
        <>
        <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-            <img src="rocketlogo.svg" alt="" />
+            <img src="rocketlogo.svg" alt="logo" />
                 <nav>
                       <a >Home</a>
                    
