@@ -7,10 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+     
 
     img {
         max-width: 500px;
         max-height: 300px;
+    }
+
+    @media (max-width: 800px){
+    // utilizar media queries para fazer responsividade mobile
+        img {
+            max-width: 300px;
+            max-height: 180px;
+        }
     }
 }
 
@@ -155,10 +164,14 @@
 
 .formSection {
     max-width: 1200px;
-    max-height: 450px;
+    max-height: 600px;
 
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 37rem;
-    margin: 0 auto 0 auto;
+    margin: auto;
     padding: 1rem;
+    
 }
