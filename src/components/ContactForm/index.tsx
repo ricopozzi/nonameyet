@@ -1,15 +1,16 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState, use } from 'react'
 import styles from './styles.module.scss'
 import { Form } from '@unform/web'
 import Input from '../Input/index'
 import * as Yup from 'yup'
-import { EOVERFLOW } from 'constants'
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 
 export default function ContactForm() {
     const formRef = useRef(null)
+    const [ isSubmited ,setSubmited ] = useState(null)
+
 
     const handleFormSubmmit = async data => {
         try { 
@@ -28,6 +29,8 @@ export default function ContactForm() {
         await formSchema.validate(data, {
             abortEarly: false,
         })
+        setSubmited(true)
+
         //validation passed
     } catch(err) {
         const validationErrors = {}
@@ -43,11 +46,12 @@ export default function ContactForm() {
         }
         
     }
-
         
     }
 
-    return (
+    return isSubmited ? (
+        <div className={styles.formClass}> Formulário enviado com Sucesso <br />Entraremos em contato!</div>
+    ) : (
         <Form className={styles.formClass}
         ref={formRef}
         onSubmit={handleFormSubmmit}
